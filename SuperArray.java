@@ -16,8 +16,15 @@ public class SuperArray{
 
   public boolean add(String element){
     for(int i = 0; i < data.length; i++){
-      if(data[i] == null) data[i] = element;
+      if(data[i] == null) {
+        data[i] = element;
+        return true;
+      }
     }
-    return true;
+    return false;
+  }
+
+  public String get(int index){
+    return data[index];
   }
 }
