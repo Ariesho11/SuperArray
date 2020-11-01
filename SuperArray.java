@@ -7,6 +7,10 @@ public class SuperArray{
   }
 
   public int size(){
-    return data.length;
+    int s = 0;
+    for(int i = 0; i < data.length; i++){
+      if(data[i] != null) s++;
+    }
+    return s;
   }
 }
