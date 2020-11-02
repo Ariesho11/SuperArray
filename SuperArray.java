@@ -11,6 +11,7 @@ public class SuperArray{
     for(int i = 0; i < data.length; i++){
       if(data[i] != null) s++;
     }
+    s = size;
     return s;
   }
 
@@ -33,4 +34,13 @@ public class SuperArray{
     data[index] = element;
     return prev;
   }
+
+  private void resize(){
+    String[] na = new String[data.length+10];
+    for(int i = 0; i < data.length; i++){
+      na[i] = data[i];
+    }
+    data = na;
+  }
+
 }
