@@ -16,15 +16,18 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    if(size > data.length) resize();
+    int bool = 0;
+    if(size() == data.length) resize();
     for(int i = 0; i < data.length; i++){
       if(data[i] == null){
         data[i] = element;
-        return true;
+        i = data.length;
+        bool = 1;
       }
     }
-    return true;
-    }
+    size++;
+    return (bool == 1);
+  }
 
   public String get(int index){
     return data[index];
@@ -45,7 +48,7 @@ public class SuperArray{
   }
 
   public boolean isEmpty(){
-    return(size == 0);
+    return(size() == 0);
   }
 
   public void clear(){
@@ -59,10 +62,6 @@ public class SuperArray{
    return ns;
  }
 
-/*  🗑 public String toString()
-  Format "[e0, e1, e2,..., eN]" where the size is N+1
-  This only displays the elements that were added, not the empty spots
-*/
   public boolean contains(String s){
     return true;
   }
