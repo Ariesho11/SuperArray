@@ -52,12 +52,17 @@ public class SuperArray{
   }
 
   public void clear(){
-    data = new String[10]; //wipe the values
+    data = new String[data.length]; //wipe the values
+    size = 0;
   }
  public String toString(){
-   String ns = "";
-   for(int i = 0; i < size(); i++){
-     if (data[i] != null) ns = ns + data[i];
+   String ns = "[";
+   for(int i = 0; i < size; i++){
+     if (i == size-1){
+      ns = ns + data[i] + "]";
+      return ns;
+    }
+     if (data[i] != null) ns = ns + data[i] + ", ";
    }
    return ns;
  }
