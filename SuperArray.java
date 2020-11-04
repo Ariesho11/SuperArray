@@ -16,15 +16,15 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    //if (data.length == size-1) resize();
+    if(size > data.length) resize();
     for(int i = 0; i < data.length; i++){
-      if(data[i] == null) {
+      if(data[i] == null){
         data[i] = element;
         return true;
       }
     }
-    return false;
-  }
+    return true;
+    }
 
   public String get(int index){
     return data[index];
@@ -51,14 +51,13 @@ public class SuperArray{
   public void clear(){
     data = new String[10]; //wipe the values
   }
-
-  public String toString(){
-    String ns = "";
-    for (int i = 0; i < data.length; i++){
-      //
-    }
-    return "String";
-  }
+ public String toString(){
+   String ns = "";
+   for(int i = 0; i < size(); i++){
+     if (data[i] != null) ns = ns + data[i];
+   }
+   return ns;
+ }
 
 /*  🗑 public String toString()
   Format "[e0, e1, e2,..., eN]" where the size is N+1
