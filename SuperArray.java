@@ -73,11 +73,26 @@ public class SuperArray{
 
   public boolean contains(String s){
     for(int i = 0; i < size; i++){
-      if (this.get(i).equals(s)) return true;
+      if (get(i).equals(s)) return true;
     }
     return false;
   }
-/*  🍥 public boolean contains(String s)
-  Returns true if this list contains the specified element.
-  */
+
+  public void add(int index, String element){
+    String[] temp = new String[data.length];
+    if (data[index] == null) data[index] = element;
+    else {
+      for(int i = 0; i < size; i++){
+        if (i == index) {
+          temp[index] = element;
+          temp[i+1] = data[i];
+      }
+        if (i > index) temp[i+1] = data[i];
+        if (i < index) temp[i] = data[i];
+      }
+    }
+    data = temp;
+    size = size + 1;
+  }
+
 }

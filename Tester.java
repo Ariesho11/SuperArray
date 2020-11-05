@@ -29,7 +29,8 @@ public class Tester{
     System.out.println(d.toString());
     System.out.println(words.contains("ebi"));
     System.out.println(d.contains("15"));
-
+    d.add(7, "oops");
+    System.out.println(d.toString());
   /*  for(int i = 0; i < words.size(); ++i) {
         if(!words.get(i).equals("mhm")) {
             System.out.println("Don't say " + words.set(i, "hmh") + "!");
