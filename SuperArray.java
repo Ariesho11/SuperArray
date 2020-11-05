@@ -68,7 +68,10 @@ public class SuperArray{
  }
 
   public boolean contains(String s){
-    return true;
+    for(int i = 0; i < size; i++){
+      if (this.get(i).equals(s)) return true;
+    }
+    return false;
   }
 /*  🍥 public boolean contains(String s)
   Returns true if this list contains the specified element.
