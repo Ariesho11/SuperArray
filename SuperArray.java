@@ -59,7 +59,8 @@ public class SuperArray{
     data = new String[data.length]; //wipe the values
     size = 0;
   }
- public String toString(){
+
+  public String toString(){
    String ns = "[";
    for(int i = 0; i < size; i++){
      if (i == size-1){
