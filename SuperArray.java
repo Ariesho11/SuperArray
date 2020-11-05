@@ -69,12 +69,13 @@ public class SuperArray{
     }
      if (data[i] != null) ns = ns + data[i] + ", ";
    }
+   ns = ns + "]";
    return ns;
- }
+  }
 
   public boolean contains(String s){
     for(int i = 0; i < size; i++){
-      if (s.equals(get(i))) return true;
+      if (get(i).equals(s)) return true;
     }
     return false;
   }
@@ -113,7 +114,7 @@ public class SuperArray{
 
   public int indexOf(String s){
     for(int i = 0; i < size; i++){
-      if (s.equals(get(i))) return i;
+      if (get(i).equals(i)) return i;
     }
     return -1;
   }
