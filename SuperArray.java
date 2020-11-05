@@ -73,7 +73,7 @@ public class SuperArray{
 
   public boolean contains(String s){
     for(int i = 0; i < size; i++){
-      if (get(i).equals(s)) return true;
+      if (s.equals(get(i))) return true;
     }
     return false;
   }
@@ -115,6 +115,14 @@ public class SuperArray{
       if (s.equals(get(i))) return i;
     }
     return -1;
+  }
+
+  public String[] toArray(){
+    String[] na = new String[size];
+    for(int i = 0; i < size; i++){
+      na[i] = data[i];
+    }
+    return na;
   }
 
 }

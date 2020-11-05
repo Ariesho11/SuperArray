@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Tester{
   public static void main(String[] args){
     SuperArray d = new SuperArray();
@@ -35,6 +36,7 @@ public class Tester{
     System.out.println(d.toString());
     System.out.println(d.indexOf("12"));
     System.out.println(d.indexOf("hello"));
+    System.out.println(Arrays.toString(words.toArray()));
   /*  for(int i = 0; i < words.size(); ++i) {
         if(!words.get(i).equals("mhm")) {
             System.out.println("Don't say " + words.set(i, "hmh") + "!");
