@@ -98,23 +98,19 @@ public class SuperArray{
   }
 
   public String remove(int index){
-    String[] temp = new String[data.length];
-    for(int i = 0; i < size; i++){
-      if (i == index) {
-        temp[index] = data[i+1];
-    }
-      if (i > index) temp[i] = data[i+1];
-      if (i < index) temp[i] = data[i];
-    }
     String rm = data[index];
-    data = temp;
+    if (index >= 0) {
+      for(int i = index; i < size-1; i++){
+        data[i] = data[i+1];
+      }
+    }
     size = size - 1;
     return rm;
   }
 
   public int indexOf(String s){
     for(int i = 0; i < size; i++){
-      if (get(i).equals(i)) return i;
+      if (get(i).equals(s)) return i;
     }
     return -1;
   }
