@@ -110,4 +110,11 @@ public class SuperArray{
     return rm;
   }
 
+  public int indexOf(String s){
+    for(int i = 0; i < size; i++){
+      if (s.equals(get(i))) return i;
+    }
+    return -1;
+  }
+
 }
