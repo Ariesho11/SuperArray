@@ -44,11 +44,16 @@ public class Demo{
 
     SuperArray t3 = new SuperArray();
     SuperArray t4 = new SuperArray();
+    SuperArray t5 = new SuperArray();
     t3.add("9"); t3.add("1"); t3.add("2"); t3.add("2"); t3.add("3"); t3.add("4");
     t4.add("0"); t4.add("4"); t4.add("2"); t4.add("2"); t4.add("9");
+    t5.add("9"); t5.add("2"); t5.add("1"); t5.add("3"); t5.add("4");
     System.out.println("t3: "+ t3);
     System.out.println("t4: "+ t4);
-    System.out.println(findOverlap(t3, t4));
-
+    System.out.println("overlap of t3, t4: " + findOverlap(t3, t4));
+    System.out.println(t3.lastIndexOf("2"));
+    System.out.println(t3.indexOf("2"));
+    System.out.println(t3.equals(t4));
+    System.out.println(t5.equals(t3));
     }
 }
