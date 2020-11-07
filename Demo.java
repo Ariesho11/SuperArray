@@ -10,10 +10,14 @@ public class Demo{
   public static SuperArray findOverlap(SuperArray a, SuperArray b){
     SuperArray overlap = new SuperArray();
     for(int i = 0; i < a.size(); i++){
-      for(int j = 0; j < b.size()-1; j++){
-        if (a.get(i).equals(b.get(j))) overlap.add(a.get(i));
+      for(int j = 0; j < b.size(); j++){
+        if (a.get(i).equals(b.get(j))){
+          overlap.add(a.get(i));
+          j = b.size();
+        }
       }
     }
+    removeDuplicates(overlap);
     return overlap;
   }
 
@@ -37,6 +41,14 @@ public class Demo{
     System.out.println("t1: "+ t1);
     System.out.println("t2: "+ t2);
     System.out.println(findOverlap(t1, t2));
+
+    SuperArray t3 = new SuperArray();
+    SuperArray t4 = new SuperArray();
+    t3.add("9"); t3.add("1"); t3.add("2"); t3.add("2"); t3.add("3"); t3.add("4");
+    t4.add("0"); t4.add("4"); t4.add("2"); t4.add("2"); t4.add("9");
+    System.out.println("t3: "+ t3);
+    System.out.println("t4: "+ t4);
+    System.out.println(findOverlap(t3, t4));
 
     }
 }
