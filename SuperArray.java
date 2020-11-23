@@ -93,18 +93,12 @@ public class SuperArray{
     if (index < 0 || index > size()){
       throw new IndexOutOfBoundsException("index can't be negative or greater than size");
     }
-    if (data[index] == null) data[index] = element;
-    else {
-      for(int i = index; i < size; i++){
-        String temp = data[i];
-        if (i == index) {
-          data[index] = element;
-          data[i+1] = data[i];
-          i++;
-      }
-        else data[i+1] = data[i];
-      }
+    String[] temp = new String[size()+1];
+    for(int i = size; i > index; i--){
+      String temp1 = data[i-1];
+      data[i] = temp1;
     }
+    data[index] = element;
     size = size + 1;
   }
 
@@ -113,11 +107,12 @@ public class SuperArray{
       throw new IndexOutOfBoundsException("index can't be negative or greater than size");
     }
     String rm = data[index];
-    if (index >= 0) {
-      for(int i = index; i < size-1; i++){
-        data[i] = data[i+1];
-      }
+    String[] temp = new String[size()-1];
+    int a = 0;
+    for(int i = 0; i < size; i++){
+        if(i != index) temp[a++] = data[i];
     }
+    data = temp;
     size = size - 1;
     return rm;
   }
